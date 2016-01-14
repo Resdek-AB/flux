@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html>
+  <title>fLux Homepage</title>
   <h1> Welcome to the fLux coin homepage</h1>
-  <br><p>Input your name to check your balance: <input type="text" id="input"><button onclick="checkBalance()">Balance</button>
+  <br><p>Input your name to check your balance: <input type="text" id="inputbox"><button onclick="checkBalance()">Check</button>
   <br><p id="write"></p>
   <img id="watermark" src="https://cloud.githubusercontent.com/assets/14099720/12311859/cd38e120-ba1f-11e5-8335-d1b14b268c0a.png">
 <style>
 * {
-  font-family: Arial;
+  font-family: "Trebuchet MS", "Arial";
   text-align: center;
 }
 .red {
   color: red;
 }
+.bal {
+	font-weight: bold;
+	margin-top: 0em;
+	margin-bottom: -1.15em;
+}
 #watermark {
  position:fixed;
  bottom:5px;
  right:5px;
- opacity:0.5;
+ opacity:0.25;
 }
 </style>
 <script>
   function checkBalance() {
-    var user = document.getElementById("input").value;
-    if(user == "landon") {
-      document.getElementById("write").innerHTML = "Your balance is <span class='red'>10.30</span>";
-    }
-    else {
-      document.getElementById("write").innerHTML = "<span class='red'>Unknown Account</span>";
-    }
+   var user = document.getElementById("inputbox").value;
+   var blandon = "10";
+   var blogan = "0";
+   var blaken = "0";
+   var all = (blandon * 1) + (blogan * 1) + (blaken * 1);
+	if(user == "landon") {
+		document.getElementById("write").innerHTML = "Your balance is...<p class='bal'><br>" + blandon + " fLux / " + blandon / 10 + " USD</p>";
+		}
+	else if(user == "logan") {
+		document.getElementById("write").innerHTML = "Your balance is...<p class='bal'><br>" + blogan + " fLux / " + blogan / 10 + " USD</p>";
+		}
+	else if(user == "laken") {
+		document.getElementById("write").innerHTML = "Your balance is...<p class='bal'><br>" + blaken + " fLux / " + blaken / 10 + " USD</p>";
+		}
+	else if(user == "bank") {
+		document.getElementById("write").innerHTML = "There is...<br><p class='bal'>" + all + " fLux / " + all / 10 + " USD</p><br>in the bank";
+		}
+	else {
+		document.getElementById("write").innerHTML = "<span class='red'>Unknown Account</span>";
+		}
   }
 </script>
 </html>
